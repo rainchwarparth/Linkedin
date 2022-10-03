@@ -58,8 +58,4 @@ def src_code():
     val = driver.page_source
     return val
 
-def output(var):
-    varf = var * 11
-    return varf
-    #no update hapenning
-    #this is just to test if git pull is working properly
+#removal of the prev fxn
