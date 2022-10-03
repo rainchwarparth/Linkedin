@@ -59,6 +59,6 @@ def src_code():
     return val
 
 def output(var):
-    var = 11
-    return var
+    varf = var * 11
+    return varf
     #this is just to test if git pull is working properly
