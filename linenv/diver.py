@@ -57,3 +57,7 @@ def is_selected(str_xpath_isselected):
 def src_code():
     val = driver.page_source
     return val
+
+def output():
+    return 0
+    #this is just to test if git pull is working properly
