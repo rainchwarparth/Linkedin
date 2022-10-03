@@ -58,6 +58,7 @@ def src_code():
     val = driver.page_source
     return val
 
-def output():
-    return 0
+def output(var):
+    var = 11
+    return var
     #this is just to test if git pull is working properly
