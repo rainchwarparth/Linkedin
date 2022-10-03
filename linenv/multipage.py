@@ -1,5 +1,6 @@
 import streamlit as st
- 
+#decribes the multipage structure of the app
+
 class MultiApp:
     def __init__(self):
         self.apps = []
@@ -12,7 +13,6 @@ class MultiApp:
         })
 
     def run(self):
-        # app = st.sidebar.radio(
         app = st.selectbox(
             'Navigation',
             self.apps,
