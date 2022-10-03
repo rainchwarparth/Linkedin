@@ -2,7 +2,7 @@ from time import time
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver  
 import time
-
+ 
 def diver():
     global driver
     driver = webdriver.Chrome(ChromeDriverManager().install())

@@ -10,7 +10,7 @@ from dateutil.relativedelta import relativedelta
 import streamlit as st
 import base64
 from diver import *
-
+ 
 st.title('LINKEDIN RECURITER PROJECT DATA EXTRACTION')
 
 

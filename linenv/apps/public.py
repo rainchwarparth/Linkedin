@@ -10,7 +10,7 @@ from dateutil.relativedelta import relativedelta
 import streamlit as st
 import base64
 from diver import *
-
+ 
 def app():
     st.title('PUBLIC LINKEDIN SCRAPPER')
 
