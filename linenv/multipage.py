@@ -1,5 +1,5 @@
 import streamlit as st
- 
+#decribes the multipage structure of the app
 class MultiApp:
     def __init__(self):
         self.apps = []
