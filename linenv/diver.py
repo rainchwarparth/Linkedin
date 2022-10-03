@@ -58,4 +58,7 @@ def src_code():
     val = driver.page_source
     return val
 
+def optputf(varf):
+    var = varf * 11
+    return var
 #removal of the prev fxn
