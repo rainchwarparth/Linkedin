@@ -3,7 +3,7 @@ import time
 from webdriver_manager.chrome import ChromeDriverManager
 import streamlit as st
 from diver import * 
- 
+   
 st.sidebar.success("LINKEDIN RECURITER OPTION")
 
 
