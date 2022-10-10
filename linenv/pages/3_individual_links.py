@@ -24,6 +24,7 @@ with st.form("my_form"):
         links = st.text_input("Enter Links:")
         submitted_new = st.form_submit_button("EXTRACT")
         if submitted_new:
+            home_url = get__url()
             link_list = links.split(',')
 
             sleep(10)
@@ -108,7 +109,7 @@ with st.form("my_form"):
                         experience.append(list(exp))
 
             
-            gotourl(get_url)
+            gotourl(home_url)
             p_link = []
             for i in range(0,len(pl_l4)):
                 link = pl_l4[i].split('.',1)

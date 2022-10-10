@@ -23,7 +23,7 @@ with st.form("my_form"):
 
         submitted_new = st.form_submit_button("EXTRACT SELECTED PROFILES")
         if submitted_new:
-            get_url = get__url()
+            home_url = get__url()
                                                                                  #div3               
             range_val = driver_find_text("""/html[1]/body[1]/div[4]/div[5]/div[1]/div[3]/section[1]/div[3]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/form[1]/div[1]/div[1]/div[2]/span[1]/span[1]/span[1]""")
             range_vals = range_val.split(' ')          #/html[1]/body[1]/div[4]/div[5]/div[1]/div[2]/section[1]/div[3]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/form[1]/div[1]/div[1]/div[2]/span[1]/span[1]/span[1]
@@ -132,7 +132,7 @@ with st.form("my_form"):
                         exp = []
                         experience.append(list(exp))
 
-            gotourl(get_url)
+            gotourl(home_url)
             p_link = []
             for i in range(0,len(pl_l4)):
                 link = pl_l4[i].split('.',1)

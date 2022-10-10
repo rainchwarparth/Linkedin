@@ -20,6 +20,7 @@ def get_table_download_link(df):
     return f'<a href="data:file/csv;base64,{b64}" download="output.csv">Download csv file</a>'
 
 with st.form("my_form"):
+        home_url = get__url()
         get_url = st.text_input('Enter Project URL :')
 
         submitted_new = st.form_submit_button("EXTRACT")
@@ -160,7 +161,7 @@ with st.form("my_form"):
                         exp = []
                         experience.append(list(exp))
 
-            gotourl(get_url)
+            gotourl(home_url)
             p_link = []
             for i in range(0,len(pl_l4)):
                 link = pl_l4[i].split('.',1)
