@@ -34,11 +34,12 @@ with st.form("my_form"):
 
             sleep(10)
 
-            count = driver_find_text("""/html[1]/body[1]/div[4]/div[5]/div[1]/div[2]/section[1]/div[3]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/form[1]/div[1]/div[1]/span[2]""")
+            count = driver_find_text("""/html[1]/body[1]/div[4]/div[5]/div[1]/div[3]/section[1]/div[3]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/form[1]/div[1]/div[1]/span[2]""")
+                                        #/html[1]/body[1]/div[4]/div[5]/div[1]/div[3]/section[1]/div[3]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/form[1]/div[1]/div[1]/span[2]
             z = count.split(' ')
             val = int(z[0])
-
-            profile_per_page = driver_find_text("""/html[1]/body[1]/div[4]/div[5]/div[1]/div[2]/section[1]/div[3]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/form[1]/div[1]/div[1]/div[2]/span[1]/span[1]/span[1]""")
+                                                                                        #here div 2 changed to div 3
+            profile_per_page = driver_find_text("""/html[1]/body[1]/div[4]/div[5]/div[1]/div[3]/section[1]/div[3]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/form[1]/div[1]/div[1]/div[2]/span[1]/span[1]/span[1]""")
             split_z = profile_per_page.split(' ')
             total_pp = int(split_z[2])
 
@@ -74,8 +75,8 @@ with st.form("my_form"):
                 for k in range(1,int(list_value[i] + 1)):
                     execute_script_runtime(hei,hei+700) 
                     sleep(2)
-                    hei = hei + 700
-                    temp = """//body[1]/div[4]/div[5]/div[1]/div[2]/section[1]/div[3]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/form[1]/ol[1]/li[{}]/div[1]/article[1]/div[1]/article[1]/div[1]/article[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/span[1]/span[1]/div[1]/a[1]""".format(k)
+                    hei = hei + 700                            #here div 3
+                    temp = """//body[1]/div[4]/div[5]/div[1]/div[3]/section[1]/div[3]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/form[1]/ol[1]/li[{}]/div[1]/article[1]/div[1]/article[1]/div[1]/article[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/span[1]/span[1]/div[1]/a[1]""".format(k)
                     href = find_element_xpath_get_attr(temp,'href')
                     create_prof_links.append(href)
                             
