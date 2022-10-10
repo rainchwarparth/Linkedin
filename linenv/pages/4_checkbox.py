@@ -91,9 +91,10 @@ with st.form("my_form"):
                             t2.append([])
                     email_l1.append(t1)
                     contact_l2.append(t2)
-                    public_link = soup_main.find('a',{'class':'personal-info__link'})
-                    pl = public_link.find('span',{'aria-hidden':'true'}).text.strip()
-                    pl_l4.append(pl)
+                    # public_link = soup_main.find('a',{'class':'personal-info__link'})
+                    # pl = public_link.find('span',{'aria-hidden':'true'}).text.strip()
+                    # pl_l4.append(pl)
+                    pl_l4.append(candidate_list)
 
                     div = soup_main.find_all('div',{'class':"""expandable-list expandable-stepper background-section__container expandable-list-profile-core"""})
                     liii = div[0].find_all('li')
@@ -133,11 +134,11 @@ with st.form("my_form"):
                         experience.append(list(exp))
 
             gotourl(home_url)
-            p_link = []
-            for i in range(0,len(pl_l4)):
-                link = pl_l4[i].split('.',1)
-                lll_link = 'https://www.' + link[1] + '/'
-                p_link.append(lll_link)
+            # p_link = []
+            # for i in range(0,len(pl_l4)):
+            #     link = pl_l4[i].split('.',1)
+            #     lll_link = 'https://www.' + link[1] + '/'
+            #     p_link.append(lll_link)
                 
             main = []
             for i in range(0,len(experience)):
@@ -192,7 +193,7 @@ with st.form("my_form"):
                 
 
 
-            data = {'Public Link':p_link,
+            data = {'Link':pl_l4,
                     'Name': name_l3,
                     'Email':email_l1,
                     'Contact':contact_l2,

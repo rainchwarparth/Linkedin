@@ -123,6 +123,7 @@ with st.form("my_form"):
                     #public_link = soup_main.find('a',{'class':'personal-info__link'})
                     #pl = public_link.find('span',{'aria-hidden':'true'}).text.strip()
                     #pl_l4.append(pl)
+                    pl_l4.append(create_prof_links)
                     
                     div = soup_main.find_all('div',{'class':"""expandable-list expandable-stepper background-section__container expandable-list-profile-core"""})
                     liii = div[0].find_all('li')
@@ -221,7 +222,7 @@ with st.form("my_form"):
                 
 
 
-            data = {#'Public Link':p_link,
+            data = {'Link':create_prof_links,#p_link,
                     'Name': name_l3,
                     'Email':email_l1,
                     'Contact':contact_l2,
