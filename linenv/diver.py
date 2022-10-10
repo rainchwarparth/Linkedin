@@ -1,4 +1,3 @@
-from logging.config import _RootLoggerConfiguration
 from time import time
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver  
