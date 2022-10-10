@@ -24,7 +24,6 @@ with st.form("my_form"):
         links = st.text_input("Enter Links:")
         submitted_new = st.form_submit_button("EXTRACT")
         if submitted_new:
-            get_url = src_code()
             link_list = links.split(',')
 
             sleep(10)

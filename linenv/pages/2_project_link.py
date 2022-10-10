@@ -100,64 +100,65 @@ with st.form("my_form"):
             for i in range(0,len(sourc_main)):
                 soup_main = BeautifulSoup(sourc_main[i])
                 name = soup_main.find('title').text
-                name_l3.append(name)
-                details = soup_main.find_all('li',{'class':'contact-info__list-item'})
-                t1 = []
-                t2 = []
-                for s in range(0,len(details)):
-                    spans = details[s].find('span')
-                    if spans != None:
-                        if 'contact-info__email-address' in str(spans):
-                            email = spans.text
-                            t1.append(email)
-                        if 'data-live-test-contact-phone' in str(spans):
-                            cont = spans.text
-                            t2.append(cont)
+                if name != 'LinkedIn Member':
+                    name_l3.append(name)
+                    details = soup_main.find_all('li',{'class':'contact-info__list-item'})
+                    t1 = []
+                    t2 = []
+                    for s in range(0,len(details)):
+                        spans = details[s].find('span')
+                        if spans != None:
+                            if 'contact-info__email-address' in str(spans):
+                                email = spans.text
+                                t1.append(email)
+                            if 'data-live-test-contact-phone' in str(spans):
+                                cont = spans.text
+                                t2.append(cont)
+                        else:
+                            t1.append([])
+                            t2.append([])
+                    email_l1.append(t1)
+                    contact_l2.append(t2)
+                    public_link = soup_main.find('a',{'class':'personal-info__link'})
+                    pl = public_link.find('span',{'aria-hidden':'true'}).text.strip()
+                    pl_l4.append(pl)
+                    
+                    div = soup_main.find_all('div',{'class':"""expandable-list expandable-stepper background-section__container expandable-list-profile-core"""})
+                    liii = div[0].find_all('li')
+                    val = liii[0]
+                    lat_com = val.find_all('dd',{'class':'background-entity__summary-definition--subtitle'})
+                    com_grp = val.find_all('strong',{'class':'t-16 grouped-position-entity__company-name'})
+                    if lat_com != []:
+                        if 'position-item__company-link' in str(lat_com[0]):
+                            com = lat_com[0].find('a',{'class':'position-item__company-link'}).text.strip()
+                            com_l5.append(com)
+                        elif '<dd class="background-entity__summary-definition--subtitle" data-test-position-entity-company-name="">' in str(lat_com):
+                            strip_1 = """<dd class="background-entity__summary-definition--subtitle" data-test-position-entity-company-name="">"""
+                            s_2 = "\n"
+                            lsname = str(lat_com[0]).strip(strip_1).strip()
+                            lsnamee = str(lsname[0]).strip(s_2)
+                            com_l5.append(lsnamee)
+                    elif com_grp !=[]:      
+                        com_l5.append(com_grp[0].text)
                     else:
-                        t1.append([])
-                        t2.append([])
-                email_l1.append(t1)
-                contact_l2.append(t2)
-                public_link = soup_main.find('a',{'class':'personal-info__link'})
-                pl = public_link.find('span',{'aria-hidden':'true'}).text.strip()
-                pl_l4.append(pl)
-                
-                div = soup_main.find_all('div',{'class':"""expandable-list expandable-stepper background-section__container expandable-list-profile-core"""})
-                liii = div[0].find_all('li')
-                val = liii[0]
-                lat_com = val.find_all('dd',{'class':'background-entity__summary-definition--subtitle'})
-                com_grp = val.find_all('strong',{'class':'t-16 grouped-position-entity__company-name'})
-                if lat_com != []:
-                    if 'position-item__company-link' in str(lat_com[0]):
-                        com = lat_com[0].find('a',{'class':'position-item__company-link'}).text.strip()
-                        com_l5.append(com)
-                    elif '<dd class="background-entity__summary-definition--subtitle" data-test-position-entity-company-name="">' in str(lat_com):
-                        strip_1 = """<dd class="background-entity__summary-definition--subtitle" data-test-position-entity-company-name="">"""
-                        s_2 = "\n"
-                        lsname = str(lat_com[0]).strip(strip_1).strip()
-                        lsnamee = str(lsname[0]).strip(s_2)
-                        com_l5.append(lsnamee)
-                elif com_grp !=[]:      
-                    com_l5.append(com_grp[0].text)
-                else:
-                    t = []
-                    com_l5.append(t)
-                
-                    #experience
-                div_va = soup_main.find_all('div',{'class':"""background-section experience-card"""})
-                if len(div_va) != 0 :
-                    li = div_va[0].find_all('time')
-                    exp = []
-                    if len(li)/2 != 0:
-                        for j in range(0,len(li)):
-                            val = str(li[j]).split('<time>')
-                            v_2 = str(val[1]).rsplit('</time>')
-                            exp.append(v_2[0])
-                        exp.insert(1,'Present')
-                    experience.append(exp)
-                else:
-                    exp = []
-                    experience.append(list(exp))
+                        t = []
+                        com_l5.append(t)
+                    
+                        #experience
+                    div_va = soup_main.find_all('div',{'class':"""background-section experience-card"""})
+                    if len(div_va) != 0 :
+                        li = div_va[0].find_all('time')
+                        exp = []
+                        if len(li)/2 != 0:
+                            for j in range(0,len(li)):
+                                val = str(li[j]).split('<time>')
+                                v_2 = str(val[1]).rsplit('</time>')
+                                exp.append(v_2[0])
+                            exp.insert(1,'Present')
+                        experience.append(exp)
+                    else:
+                        exp = []
+                        experience.append(list(exp))
 
             gotourl(get_url)
             p_link = []
