@@ -23,9 +23,9 @@ with st.form("my_form"):
 
         submitted_new = st.form_submit_button("EXTRACT SELECTED PROFILES")
         if submitted_new:
-            get_url = src_code()
-
-            range_val = driver_find_text("""/html[1]/body[1]/div[4]/div[5]/div[1]/div[2]/section[1]/div[3]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/form[1]/div[1]/div[1]/div[2]/span[1]/span[1]/span[1]""")
+            get_url = get__url()
+                                                                                 #div3               
+            range_val = driver_find_text("""/html[1]/body[1]/div[4]/div[5]/div[1]/div[3]/section[1]/div[3]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/form[1]/div[1]/div[1]/div[2]/span[1]/span[1]/span[1]""")
             range_vals = range_val.split(' ')          #/html[1]/body[1]/div[4]/div[5]/div[1]/div[2]/section[1]/div[3]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/form[1]/div[1]/div[1]/div[2]/span[1]/span[1]/span[1]
             diff = int(range_vals[2]) - int(range_vals[0]) + 1 
 
@@ -38,12 +38,12 @@ with st.form("my_form"):
                 for k in range(1,int(diff + 1)):
                     execute_script_runtime(hei,hei+700)
                     sleep(2)
-                    hei = hei + 700
-                    temp = """//body[1]/div[4]/div[5]/div[1]/div[2]/section[1]/div[3]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/form[1]/ol[1]/li[{}]/div[1]/article[1]/div[1]/article[1]/div[1]/article[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/span[1]/span[1]/div[1]/a[1]""".format(k)
+                    hei = hei + 700                          #div 3
+                    temp = """//body[1]/div[4]/div[5]/div[1]/div[3]/section[1]/div[3]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/form[1]/ol[1]/li[{}]/div[1]/article[1]/div[1]/article[1]/div[1]/article[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/span[1]/span[1]/div[1]/a[1]""".format(k)
                     href = find_element_xpath_get_attr(temp,'href')
-                    create_prof_links.append(href)
-                    val = """/html[1]/body[1]/div[4]/div[5]/div[1]/div[2]/section[1]/div[3]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/form[1]/ol[1]/li[{}]/div[1]/article[1]/span[1]/input""".format(k)
-                    sel = is_selected(val)           
+                    create_prof_links.append(href)                
+                    val = """/html[1]/body[1]/div[4]/div[5]/div[1]/div[3]/section[1]/div[3]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/form[1]/ol[1]/li[{}]/div[1]/article[1]/span[1]/input""".format(k)
+                    sel = is_selected(val)                          #div 3
                     after_.append(sel)
             execute_script_to_top()  
 

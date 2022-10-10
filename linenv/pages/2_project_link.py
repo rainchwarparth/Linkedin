@@ -75,7 +75,7 @@ with st.form("my_form"):
                 for k in range(1,int(list_value[i] + 1)):
                     execute_script_runtime(hei,hei+700) 
                     sleep(2)
-                    hei = hei + 700                            #here div 3
+                    hei = hei + 700   #/div[4]/div[5]/div[1]/div[3]/section[1]/div[3]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/form[1]/ol[1]/li[1]/div[1]/article[1]/div[1]/article[1]/div[1]/article[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/span[1]/span[1]/div[1]/a[1]                         
                     temp = """//body[1]/div[4]/div[5]/div[1]/div[3]/section[1]/div[3]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/form[1]/ol[1]/li[{}]/div[1]/article[1]/div[1]/article[1]/div[1]/article[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[2]/span[1]/span[1]/div[1]/a[1]""".format(k)
                     href = find_element_xpath_get_attr(temp,'href')
                     create_prof_links.append(href)

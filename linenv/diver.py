@@ -1,3 +1,4 @@
+from logging.config import _RootLoggerConfiguration
 from time import time
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver  
@@ -58,7 +59,7 @@ def src_code():
     val = driver.page_source
     return val
 
-def optputf(varf):
-    var = varf * 11
-    return var
+def get__url():
+    val = driver.current_url
+    return val
 #removal of the prev fxn
