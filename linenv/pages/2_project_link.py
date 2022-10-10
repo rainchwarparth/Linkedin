@@ -222,7 +222,7 @@ with st.form("my_form"):
                 
 
 
-            data = {'Link':create_prof_links,#p_link,
+            data = {'Link':pl_l4,#p_link,
                     'Name': name_l3,
                     'Email':email_l1,
                     'Contact':contact_l2,
