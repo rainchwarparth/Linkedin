@@ -24,7 +24,6 @@ with st.form("my_form"):
 
         submitted_new = st.form_submit_button("EXTRACT")
         if submitted_new:
-            get_url = src_code()
             if '?' in get_url:
                 linkk = get_url.split('?')
                 link_type = linkk[0] +'?start={}'
