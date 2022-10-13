@@ -11,7 +11,7 @@ import streamlit as st
 import base64
 from diver import *
  
-st.title('LINKEDIN RECURITER PROJECT DATA EXTRACTION')
+st.title('LINKEDIN RECRUITER PROJECT DATA EXTRACTION')
 
 
 def get_table_download_link(df):

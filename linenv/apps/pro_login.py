@@ -4,11 +4,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 import streamlit as st
 from diver import * 
    
-st.sidebar.success("LINKEDIN RECURITER OPTION")
+st.sidebar.success("LINKEDIN RECRUITER OPTION")
 
 
 def app():
-    st.title('LINKEDIN RECURITER LOGIN ')
+    st.title('LINKEDIN RECRUITER LOGIN ')
 
 
     with st.form("my_form"):
